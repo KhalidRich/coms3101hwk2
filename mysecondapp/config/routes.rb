@@ -2,6 +2,9 @@ Mysecondapp::Application.routes.draw do
   resources :users
   resources :sessions, only:[:create, :destroy, :new]
 
+  match "signup" => "users#new", :via => [:get], :as => "signup"
+  match "login" => "sessions#new", :via => [:get], :as => "login"
+  match "logout" => "sessions#destroy", :via => [:get], :as => "logout"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -17,7 +17,8 @@ def create
 end
 
 def destroy
-  redirect_to root_url
+  reset_session
+  render "new"
 end
 
 end
